@@ -15,3 +15,17 @@ print(list(colleaction))
 colleaction2 = range(1, 100)
 print(colleaction2)
 print(tuple(colleaction))
+
+mylist = list(range(1, 100, 2))
+mylist.reverse()
+print(mylist)
+
+while len(mylist) > 0:
+    item = mylist.pop()
+    if item == 7:
+        continue
+    if item > 50:
+        break
+    print(item)
+else:
+    print('completed.')
