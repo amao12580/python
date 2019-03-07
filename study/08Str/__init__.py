@@ -11,3 +11,7 @@ print(c)
 d = b.replace('bc', 'bcdef')
 print(b)
 print(d)
+
+# e = d.replace('f', 123.25)  # 替换类型需要是str
+# print(d)
+# print(e)
