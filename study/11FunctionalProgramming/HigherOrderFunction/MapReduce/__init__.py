@@ -1,3 +1,5 @@
+from functools import reduce
+
 # 利用map()函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字。输入：['adam', 'LISA', 'barT']，输出：['Adam', 'Lisa', 'Bart']：
 
 # print(chr(65))
@@ -36,3 +38,24 @@ L1 = ['a', 'B', 'adam', 'LISA', 'barT']
 # print(normalize(L1[0]))
 L2 = list(map(normalize, L1))
 print(L2)
+
+
+# Python提供的sum()函数可以接受一个list并求和，请编写一个prod()函数，可以接受一个list并利用reduce()求积：
+
+def prod(l):
+    if l is None:
+        raise ValueError('l can not be null.')
+    if len(l) == 0:
+        return 0
+    return reduce(multiply, l)
+
+
+def multiply(x: float, y: float):
+    return x * y
+
+
+print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
+if prod([3, 5, 7, 9]) == 945:
+    print('测试成功!')
+else:
+    print('测试失败!')
