@@ -12,5 +12,11 @@ print(test()(2, 10, 8))
 
 import functools
 
-my_max = functools.partial(max, 10, 12, 13)
-print(my_max(*range(12)))
+
+def my_max(*args: int):
+    print(args)
+    return max(args)
+
+
+my_max_v2 = functools.partial(my_max, 10, 12, 13)
+print(my_max_v2(*range(12)))
