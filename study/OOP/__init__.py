@@ -19,7 +19,8 @@
 __author__ = 'steven'
 
 
-class Student(object):
+# class Student(object):
+class Student:  # 默认从object 继承
     def __init__(self, name: str, score: float):
         self.name = name
         self.score = score
@@ -33,3 +34,5 @@ bob = Student('Bob Jean', 105.659)
 
 jeff.print()
 bob.print()
+
+print(isinstance(jeff, object))
