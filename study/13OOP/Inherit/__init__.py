@@ -52,6 +52,8 @@ print(isinstance(animal, Animal))
 print(isinstance(animal2, Animal))
 print(isinstance(animal2, Cat))
 print(isinstance(animal, Cat))
+print(dir(Animal))
+print(dir(Cat))
 
 duck = Duck()
 
