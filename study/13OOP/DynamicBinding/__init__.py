@@ -44,7 +44,26 @@ jeff.age = 79
 print(lisa.age)
 print(jeff.age)
 
+
 # 预定义属性元组
+
+class Student:
+    __slots__ = ('name', 'age', 'sex')
+
+    def __init__(self):
+        self.name = 'No Name'
+        self.age = 18
+        self.sex = '男'
+
+    def __str__(self):
+        return 'name:' + self.name + ',age:' + str(self.age) + ',sex:' + self.sex
+
+    pass
+
+
+lisa = Student()
+print(lisa)
+# lisa.tittle='No tittle'#AttributeError: 'Student' object has no attribute 'tittle'
 
 # 方法
 # 区分实例方法和类方法
