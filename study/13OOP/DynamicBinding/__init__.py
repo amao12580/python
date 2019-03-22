@@ -63,10 +63,61 @@ class Student:
 
 lisa = Student()
 print(lisa)
+
+
 # lisa.tittle='No tittle'#AttributeError: 'Student' object has no attribute 'tittle'
 
 # 方法
 # 区分实例方法和类方法
+class Student:
+    # __slots__ = ('name', 'age', 'sex')
+
+    def __init__(self):
+        self.name = 'No Name'
+        self.age = 18
+        self.sex = '男'
+
+    def __str__(self):
+        return 'name:' + self.name + ',age:' + str(self.age) + ',sex:' + self.sex
+
+    def get_birth(self):
+        return 2019 - self.age
+
+    pass
+
+
+lisa = Student()
+jeff = Student()
+
+print(lisa.get_birth())
+
+from types import MethodType
+
+
+def check_is_woman(self):
+    return self.sex == '女'
+
+
+lisa.is_woman = MethodType(check_is_woman, lisa)  # 给实例绑定一个方法
+
+print(lisa.is_woman())
 
 
 # 属性的getter setter
+
+
+class Student:
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        self._age = value
+
+    pass
+
+
+jeff1 = Student()
+jeff1.age = 19
+print(jeff1.age)
